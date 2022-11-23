@@ -1,0 +1,25 @@
+<div *ngIf="isLoading"> Loading... </div>
+<div *ngIf="isError"> Error :( Something went wrong.
+
+</div>
+<div *ngIf="getAllStudents">
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Sid</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Favorite Sport</th>
+        <th>Class Teacher</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of getAllStudents">
+        <td>{{ student.sid }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.dept }}</td>
+        <td>{{ student.favSport }}</td>
+        <td>{{ student.classTeacher }}</td>
+      </tr>
+  </table>
+</div>
+<router-outlet></router-outlet>
